@@ -4,5 +4,12 @@
     align-items: center;
     height: 100vh;
     flex-direction: column;
+}
 
+.fx{
+    display: flex;
+}
+
+.fx >div {
+    margin: 1rem;
 }
