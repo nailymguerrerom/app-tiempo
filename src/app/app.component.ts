@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TiempoService } from './service/tiempo.service';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular-time';
 
+  constructor(private servicio_de_tiempo:TiempoService){}
+
 buscar(nombreABuscar:any){
 console.log(nombreABuscar.value)
+
+this.servicio_de_tiempo.obtenertiempo(nombreABuscar.value)
+.subscribe((datos)=>{
+  console.log(datos)
+})
 }
 }
 
