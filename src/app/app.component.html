@@ -5,5 +5,11 @@
   <div>
     <input type="text" #texto (keyup.enter)="buscar(texto)">
     <button (click)= "buscar(texto)">Buscar</button>
+
+  <div *ngFor="let tiempo of pronostico">
+    <h3>{{tiempo.date}}</h3>
+    <h4>{{tiempo.day.avgtemp_c}}</h4>
+    <img src="{{tiempo.day.condition.icon}}" alt="">
+  </div>
   </div>
 </div>
